@@ -112,7 +112,7 @@ const PackageList = () => {
             </div>
             <div className="hidden p-2.5 text-center sm:block xl:p-5">
               <h5 className="text-sm font-medium uppercase xsm:text-base">
-                weight
+                Active Delivery Id
               </h5>
             </div>
           </div>
@@ -147,7 +147,7 @@ const PackageList = () => {
               </div>
 
               <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-                <p className="text-black dark:text-white">{value?.weight}</p>
+                <p className="text-black dark:text-white">{value?.active_delivery_id}</p>
               </div>
             </div>
           ))}

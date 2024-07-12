@@ -44,7 +44,8 @@ const useRequest = (options: RequestOptions) => {
     try {
       const response = await axios
         .create({
-          baseURL: import.meta.env.VITE_API_BASE_URL,
+          baseURL:
+            import.meta.env.VITE_API_BASE_URL + import.meta.env.VITE_API_PREFIX,
         })
         .request(requestConfig);
       setResponse(response);

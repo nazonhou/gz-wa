@@ -187,7 +187,7 @@ const CreateDelivery = () => {
                               className="text-body dark:text-bodydark"
                               key={key}
                             >
-                              {`${value._id}: ${value.description}`}
+                              {`${value.description} #${value._id}`}
                             </option>
                           ),
                         )}

@@ -89,25 +89,15 @@ const DeliveryList = () => {
         </div>
 
         <div className="flex flex-col">
-          <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+          <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-3">
             <div className="p-2.5 xl:p-5">
               <h5 className="text-sm font-medium uppercase xsm:text-base">
+                ID
+              </h5>
+            </div>
+            <div className="p-2.5 text-center xl:p-5">
+              <h5 className="text-sm font-medium uppercase xsm:text-base">
                 Package Id
-              </h5>
-            </div>
-            <div className="p-2.5 text-center xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
-                Pickup time
-              </h5>
-            </div>
-            <div className="p-2.5 text-center xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
-                Start time
-              </h5>
-            </div>
-            <div className="p-2.5 text-center xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
-                End time
               </h5>
             </div>
             <div className="hidden p-2.5 text-center sm:block xl:p-5">
@@ -119,7 +109,7 @@ const DeliveryList = () => {
 
           {response?.data.map((value: Delivery, key: number) => (
             <div
-              className={`grid grid-cols-3 sm:grid-cols-5 ${
+              className={`grid grid-cols-3 sm:grid-cols-3 ${
                 key === response?.data.length - 1
                   ? ''
                   : 'border-b border-stroke dark:border-strokedark'
@@ -128,31 +118,13 @@ const DeliveryList = () => {
             >
               <div className="flex items-center gap-3 p-2.5 xl:p-5">
                 <p className="hidden text-black dark:text-white sm:block">
+                  {value?._id}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center p-2.5 xl:p-5">
+                <p className="text-black dark:text-white">
                   {value?.package_id}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">
-                  {value?.pickup_time
-                    ? new Date(value?.pickup_time)?.toISOString()
-                    : ''}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">
-                  {value?.start_time
-                    ? new Date(value?.start_time)?.toISOString()
-                    : ''}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center p-2.5 xl:p-5">
-                <p className="text-black dark:text-white">
-                  {value?.end_time
-                    ? new Date(value?.end_time)?.toISOString()
-                    : ''}
                 </p>
               </div>
 
